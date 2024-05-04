@@ -25,6 +25,12 @@ module tb_LIFNeuron();
     // Clock with a period of 20 ns
     always #10 clk = ~clk;  
 
+    // Initialize membrane potential
+    initial begin
+        membrane_potential = 0;
+        fired = 0;
+    end
+
     initial begin
         clk = 0;
         reset = 1;

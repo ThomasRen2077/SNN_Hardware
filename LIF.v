@@ -9,12 +9,6 @@ module LIFNeuron(
     output reg [15:0] membrane_potential    // Membrane potential
 );
 
-    // Initialize membrane potential
-    initial begin
-        membrane_potential = 0;
-        fired = 0;
-    end
-
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             // Reset potential to 0 or reset_potential as needed
@@ -31,4 +25,5 @@ module LIFNeuron(
             end
         end
     end
+    
 endmodule
