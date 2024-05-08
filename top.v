@@ -128,18 +128,18 @@ max_pooling pooling_layer(
     .done(mp_done),
     .src1_start_address(12'd0),
     
-	 .src1_address(mp_address_0),
-    .src1_readdata(sram_readdata_0),
-    .src1_write_en(mp_we_0),
+	 .src1_address(mp_address),
+    .src1_readdata(sram_readdata),
+    .src1_write_en(mp_we),
     .src1_row_size(src1_row_size),
     .src1_col_size(src1_col_size),
     .src2_row_size(src2_row_size),
     .src2_col_size(src2_col_size),
 	 
     .dest_start_address(12'd0),
-    .dest_address(mp_address),
-    .dest_writedata(mp_writedata),
-    .dest_write_en(mp_we)
+    .dest_address(mp_address_0),
+    .dest_writedata(mp_writedata_0),
+    .dest_write_en(mp_we_0)
 );
 
 assign fc_start = mp_done;
