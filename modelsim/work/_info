@@ -1,0 +1,268 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/yg585/Desktop/Neural-Processing-Unit-on-FPGA/modelsim
+vfloat_compare
+Z0 !s110 1715208982
+!i10b 1
+!s100 1<g840Meec1`O^jiR:A;L3
+IG5]k4AzU4jhW;E;L_IWL81
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/yg585/Desktop/SNN_Hardware/modelsim
+w1715202753
+8C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fp16_compare.v
+FC:\Users\yg585\Desktop\SNN_Hardware\modelsim\fp16_compare.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1715208982.000000
+!s107 C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fp16_compare.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fp16_compare.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vfloatAdd
+R0
+!i10b 1
+!s100 z=WHPYQbK>MzFWMG5mC6g0
+I?DnBWGF_F9]1lGU2W7XlZ1
+R1
+R2
+w1715202425
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_ADD.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_ADD.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_ADD.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_ADD.v|
+!i113 1
+R5
+R6
+nfloat@add
+vfloatMult
+R0
+!i10b 1
+!s100 eX66F3za_aV:j:azM_Z091
+I35<kG8UeH?W]8VMC:0RAb0
+R1
+R2
+w1715205950
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_MULT.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_MULT.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_MULT.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_MULT.v|
+!i113 1
+R5
+R6
+nfloat@mult
+vLIFNeuron
+R0
+!i10b 1
+!s100 Y]hh2lkEY5^KK>PU5VnD?0
+IOakLbnRm>9a_P;m;n_5if3
+R1
+R2
+w1715206846
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/LIF.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/LIF.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/LIF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/LIF.v|
+!i113 1
+R5
+R6
+n@l@i@f@neuron
+vmatrix_conv
+R0
+!i10b 1
+!s100 m;6oXYnhR`S]zJcQn?SQ[1
+ImPjj3HPSzA^1=<OmJXK=m2
+R1
+R2
+w1715203097
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/Conv.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/Conv.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/Conv.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/Conv.v|
+!i113 1
+R5
+R6
+vmatrix_dot
+!s110 1715207130
+!i10b 1
+!s100 Q?S>;KOzE7AePKagodKHf0
+I];`9YW^Df6Q9WVE?V78C[1
+R1
+R2
+w1715207087
+Z7 8C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fc.v
+Z8 FC:\Users\yg585\Desktop\SNN_Hardware\modelsim\fc.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1715207130.000000
+!s107 C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fc.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fc.v|
+!i113 1
+R5
+R6
+vmatrix_fc
+R0
+!i10b 1
+!s100 S;=zecZ7<jJ9SV[V0`Ug?3
+I9Jm8mnGbPi6GF=]b0oi0F0
+R1
+R2
+w1715208772
+R7
+R8
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fc.v|
+R9
+!i113 1
+R5
+R6
+vmatrix_LIF
+R0
+!i10b 1
+!s100 ;8CDER4_VU@cF;LeE4IUT1
+Io`c=IY6]SEBa?mBS46jXH1
+R1
+R2
+w1715202827
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/matrix_LIF.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/matrix_LIF.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/matrix_LIF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/matrix_LIF.v|
+!i113 1
+R5
+R6
+nmatrix_@l@i@f
+vmatrix_maxpool
+R0
+!i10b 1
+!s100 63cP4RfD8L1eW9m>aVF2f2
+I1mh2DOH4O0BLdiGffI[Ya1
+R1
+R2
+w1715208979
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/max_pooling.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/max_pooling.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/max_pooling.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/max_pooling.v|
+!i113 1
+R5
+R6
+vram
+R0
+!i10b 1
+!s100 IWBSKZD=>VEYiB5j7[H4n3
+I7ZiZ[d:zP6RKHPGM5;5Sm2
+R1
+R2
+w1715207751
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/ram.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/ram.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/ram.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/ram.v|
+!i113 1
+R5
+R6
+vSNN
+R0
+!i10b 1
+!s100 D6Ace;MjI_PPUVDHD8KfE3
+Id9^VhUQ>h@H^Y9X9VE;h^3
+R1
+R2
+w1715208807
+8C:/Users/yg585/Desktop/SNN_Hardware/modelsim/top.v
+FC:/Users/yg585/Desktop/SNN_Hardware/modelsim/top.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yg585/Desktop/SNN_Hardware/modelsim/top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yg585/Desktop/SNN_Hardware/modelsim/top.v|
+!i113 1
+R5
+R6
+n@s@n@n
+vSNN_tb
+R0
+!i10b 1
+!s100 Un4k3=o]=`5iNADZ`9<AI0
+I<;WV[3C>?2MJY91THB]]92
+R1
+R2
+w1715205904
+8C:\Users\yg585\Desktop\SNN_Hardware\modelsim\tb_top.v
+FC:\Users\yg585\Desktop\SNN_Hardware\modelsim\tb_top.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\yg585\Desktop\SNN_Hardware\modelsim\tb_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\yg585\Desktop\SNN_Hardware\modelsim\tb_top.v|
+!i113 1
+R5
+R6
+n@s@n@n_tb

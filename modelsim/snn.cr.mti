@@ -1,0 +1,78 @@
+C:/Users/yg585/Desktop/SNN_Hardware/modelsim/max_pooling.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/max_pooling.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module matrix_maxpool
+
+Top level modules:
+	matrix_maxpool
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/fc.v {1 {vlog -work work -stats=none {C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module matrix_fc
+
+Top level modules:
+	matrix_fc
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_ADD.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_ADD.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module floatAdd
+
+Top level modules:
+	floatAdd
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/Conv.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/Conv.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module matrix_conv
+
+Top level modules:
+	matrix_conv
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_MULT.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/FP16_MULT.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module floatMult
+
+Top level modules:
+	floatMult
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/top.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SNN
+
+Top level modules:
+	SNN
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/fp16_compare.v {1 {vlog -work work -stats=none {C:\Users\yg585\Desktop\SNN_Hardware\modelsim\fp16_compare.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module float_compare
+
+Top level modules:
+	float_compare
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/LIF.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/LIF.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module LIFNeuron
+
+Top level modules:
+	LIFNeuron
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/matrix_LIF.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/matrix_LIF.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module matrix_LIF
+
+Top level modules:
+	matrix_LIF
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/ram.v {1 {vlog -work work -stats=none C:/Users/yg585/Desktop/SNN_Hardware/modelsim/ram.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ram
+
+Top level modules:
+	ram
+
+} {} {}} C:/Users/yg585/Desktop/SNN_Hardware/modelsim/tb_top.v {1 {vlog -work work -stats=none {C:\Users\yg585\Desktop\SNN_Hardware\modelsim\tb_top.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SNN_tb
+
+Top level modules:
+	SNN_tb
+
+} {} {}}

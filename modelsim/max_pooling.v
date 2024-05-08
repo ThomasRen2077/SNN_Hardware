@@ -1,18 +1,18 @@
-module max_pooling(
+module matrix_maxpool(
     input clk,
     input reset,
     input start,
     output reg done,
-    input wire [11:0] src1_start_address,
-    output reg [11:0] src1_address,
+    input wire [13:0] src1_start_address,
+    output reg [13:0] src1_address,
     input wire signed [15:0] src1_readdata,
     output wire src1_write_en,
-    input wire [5:0] src1_row_size,
-    input wire [5:0] src1_col_size,
+    input wire [9:0] src1_row_size,
+    input wire [9:0] src1_col_size,
     input wire [5:0] src2_row_size,
     input wire [5:0] src2_col_size,
-    input wire [11:0] dest_start_address,
-    output reg [11:0] dest_address,
+    input wire [13:0] dest_start_address,
+    output reg [13:0] dest_address,
     output reg signed [15:0] dest_writedata,
     output reg dest_write_en
 );
@@ -26,6 +26,7 @@ module max_pooling(
     assign src1_write_en = 0;
     reg [1:0] state = 2'd2;
     reg [5:0] val = 1;
+    wire comp_result;
     
     assign dim = (src1_col_size/src2_col_size);
 
@@ -55,8 +56,11 @@ module max_pooling(
        
                     
                     row_count <= row_count+1;
-                    if ($signed(src1_readdata) > $signed(max_pool))
-                      max_pool <= $signed(src1_readdata);
+                    // if ($signed(src1_readdata) > $signed(max_pool))
+                    //   max_pool <= $signed(src1_readdata);
+                    if(comp_result)begin
+                        max_pool <= src1_readdata;
+                    end
                     dest_write_en <= 0;
                 end
                 else if (col_count < src2_col_size-1) begin
@@ -64,14 +68,20 @@ module max_pooling(
                     src1_address <= src1_address + src1_row_size - 1;
                     col_count <= col_count+1;
                     row_count <= 0;
-                    if ($signed(src1_readdata) > $signed(max_pool))
-                      max_pool <= $signed(src1_readdata);
+                    // if ($signed(src1_readdata) > $signed(max_pool))
+                    //   max_pool <= $signed(src1_readdata);
+                    if(comp_result)begin
+                        max_pool <= src1_readdata;
+                    end
                     dest_write_en <= 0;
                 end
                 else begin
                     dest_write_en <= 0;
-                    if ($signed(src1_readdata) > $signed(max_pool))
-                      max_pool <= $signed(src1_readdata);              
+                    // if ($signed(src1_readdata) > $signed(max_pool))
+                    //   max_pool <= $signed(src1_readdata);   
+                    if(comp_result)begin
+                        max_pool <= src1_readdata;
+                    end          
                     state <= 2'd3;
                 end
             end
@@ -94,7 +104,7 @@ module max_pooling(
                    
  
                     if(val == (dim*dim))
-                        state <= 2'd2; // Processing complete
+                        state <= 2'd2; // Processing comp_resultlete
                     else
                         state <= 2'd1; // Continue processing next block
                    
@@ -130,4 +140,10 @@ module max_pooling(
         endcase
     end
     end
+
+    float_compare comp(
+        .a(src1_readdata),
+        .b(max_pool),
+        .c(comp_result)
+    );
 endmodule
