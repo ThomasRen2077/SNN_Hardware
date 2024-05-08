@@ -67,7 +67,7 @@ assign sram_address_1 = (fc_start) ? fc_address_1 :
 
 assign sram_address = (fc_start) ? fc_address :
                         (conv_start) ? conv_address :
-								(mp_start) ? mp_address_0 :
+								(mp_start) ? mp_address :
                         12'd0;
 // the write enable								
 assign sram_write = (fc_start) ? fc_we :
@@ -159,7 +159,7 @@ matrix_fc fc(
 			.final_result(final_result)
 );	
 
-ram ram_src1(
+ram ram_dest(
     .q(sram_readdata),
     .d(sram_writedata),
     .address(sram_address),
@@ -167,7 +167,7 @@ ram ram_src1(
     .clk(sram_clken)
 );
 
-ram ram_src2(
+ram ram_src1(
     .q(sram_readdata_0),
     .d(sram_writedata_0),
     .address(sram_address_0),
@@ -175,7 +175,7 @@ ram ram_src2(
     .clk(sram_clken_0)
 );
 
-ram ram_dest(
+ram ram_src2(
     .q(sram_readdata_1),
     .d(sram_writedata_1),
     .address(sram_address_1),
