@@ -97,11 +97,11 @@ module matrix_LIF(
     end
     end
 
-    LIFNeuron LIF(
+    Modified_LIFNeuron LIF(
         .clk(clk),
         .reset(reset),
         .input_current(src1_readdata),
-        .threshold(thre),
+        // .threshold(thre),
         .fired(LIF_fired)
     );
 endmodule

@@ -35,20 +35,20 @@ reg [15:0] conv_dest_readdata[CHANNELS-1 : 0];
 wire [15:0] conv_dest_writedata[CHANNELS-1 : 0];
 wire conv_dest_write[CHANNELS-1 : 0];
 
-reg [13:0] LIF_src1_address[CHANNELS-1 : 0];
+wire [13:0] LIF_src1_address[CHANNELS-1 : 0];
 reg [15:0] LIF_src1_readdata[CHANNELS-1 : 0];
 reg [15:0] LIF_src1_writedata[CHANNELS-1 : 0];
-reg LIF_src1_write[CHANNELS-1 : 0];
+wire LIF_src1_write[CHANNELS-1 : 0];
 
 wire [13:0] LIF_src2_address[CHANNELS-1 : 0];
 wire [15:0] LIF_src2_readdata[CHANNELS-1 : 0];
 wire [15:0] LIF_src2_writedata[CHANNELS-1 : 0];
 wire LIF_src2_write[CHANNELS-1 : 0];
 
-reg [13:0] LIF_dest_address[CHANNELS-1 : 0];
+wire [13:0] LIF_dest_address[CHANNELS-1 : 0];
 reg [15:0] LIF_dest_readdata[CHANNELS-1 : 0];
-reg [15:0] LIF_dest_writedata[CHANNELS-1 : 0];
-reg LIF_dest_write[CHANNELS-1 : 0];
+wire [15:0] LIF_dest_writedata[CHANNELS-1 : 0];
+wire LIF_dest_write[CHANNELS-1 : 0];
 
 wire [13:0] mp_src1_address[CHANNELS-1 : 0];
 wire [15:0] mp_src1_readdata[CHANNELS-1 : 0];
@@ -303,9 +303,9 @@ generate
         always @(*) begin
             if(mp_sel[i]) begin
                 LIF_dest_readdata[i]= LIF_dest_ram_q[i] ;   
-                LIF_dest_writedata[i] =LIF_dest_ram_d[i];     
-                LIF_dest_address[i]= LIF_dest_ram_addr[i];  
-                LIF_dest_write[i]= LIF_dest_ram_we[i];   
+                LIF_dest_ram_d[i] = LIF_dest_writedata[i];     
+                LIF_dest_ram_addr[i] = LIF_dest_address[i];  
+                LIF_dest_ram_we[i] = LIF_dest_write[i];   
             end
             else begin
                 mp_src2_readdata[i]=LIF_dest_ram_q[i]; 
