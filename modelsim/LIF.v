@@ -3,17 +3,17 @@ module LIFNeuron(
     input clk,
     input reset,
     input [15:0] input_current,             // Synaptic input current
-    // input [15:0] leak_factor,               // Factor for potential decay
-    input [15:0] threshold,                 // Firing threshold
-    // input [15:0] reset_potential,           // Reset potential after firing
     output reg fired                        // Output spike
-    // output reg [15:0] membrane_potential    // Membrane potential
 );
-    parameter leak_factor = 16'h3800;
-    wire signed [15:0] mulResult;
-    wire signed [15:0] sum_plus_product;
-    wire comp_result;
+    integer threshold = 16'h3C00; // 1
+    integer leak_factor = 16'h3800; //0.5
+    integer delta_threshold = 16'h3C00; //1
+    integer decay_factor = 16'h3B99; //0.95
+
     reg [15:0] membrane_potential;
+    wire fired_wire;
+    wire [15:0] leaked_membrane_potential;
+    wire [15:0] next_membrane_potential;
 
     always @(posedge clk) begin
         if (reset) begin
@@ -22,26 +22,13 @@ module LIFNeuron(
             fired <= 0;
         end else begin
             // Update membrane potential with input current and leakage
-            // membrane_potential <= (membrane_potential + input_current - (membrane_potential * leak_factor >> 16));
-            membrane_potential <= sum_plus_product;
-            if (comp_result) begin
+            membrane_potential <= next_membrane_potential;
+            if (fired_wire) begin
                 membrane_potential <= 0;  
+                fired <= 1;
             end else begin
-                membrane_potential <= membrane_potential;
-            end
-        end
-    end
-
-    always @(*) begin
-        if(reset) begin
-            fired = 1'b0;  
-        end
-        else begin
-            if(comp_result) begin
-                fired = 1'b1;
-            end
-            else begin
-                fired = 1'b0;
+                membrane_potential <= next_membrane_potential;
+                fired <= 0;
             end
         end
     end
@@ -49,20 +36,24 @@ module LIFNeuron(
     floatMult mul(
         .floatA(membrane_potential),
         .floatB(leak_factor),
-        .product(mulResult)
+        .product(leaked_membrane_potential)
     );
 
-    floatAdd floatadd (
+    floatAdd floatadd_1 (
         .floatA(input_current),
-        .floatB(mulResult),
-        .sum(sum_plus_product)
+        .floatB(leaked_membrane_potential),
+        .sum(next_membrane_potential)
 	);
 
     float_compare comp(
-        .a(sum_plus_product),
+        .a(membrane_potential),
         .b(threshold),
-        .c()
+        .c(fired_wire)
     );
+
+
+    
+
 	 
     
 endmodule
