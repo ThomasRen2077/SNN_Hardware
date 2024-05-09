@@ -26,6 +26,9 @@ module matrix_LIF(
     reg [1:0] state = 2'd2;
     wire LIF_fired;
 
+    wire signed [15:0] src1_readdata1;
+    wire comp_res2, comp_res1;
+
     always @(posedge clk) begin
     if(reset) begin
         state <= 2'd2;
@@ -97,13 +100,30 @@ module matrix_LIF(
     end
     end
 
+    assign src1_readdata1 = (comp_res1) ? 16'h3C00 : ((comp_res2) ? src1_readdata : 16'hBC00);
+
     Modified_LIFNeuron LIF(
         .clk(clk),
         .reset(reset),
-        .input_current(src1_readdata),
+        .input_current(src1_readdata1),
         // .threshold(thre),
         .fired(LIF_fired)
     );
+
+    float_compare comp1(
+        .a(src1_readdata),
+        .b(16'h3C00),
+        .c(comp_res1)
+    );
+
+    float_compare comp2(
+        .a(src1_readdata),
+        .b(16'hBC00),
+        .c(comp_res2)
+    );
+
+
+
 endmodule
 
 
